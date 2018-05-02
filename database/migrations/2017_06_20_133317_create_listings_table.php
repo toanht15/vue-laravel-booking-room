@@ -13,6 +13,7 @@ class CreateListingsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('listings', function (Blueprint $table) {
             $table->primary('id');
             $table->unsignedInteger('id');
@@ -20,7 +21,7 @@ class CreateListingsTable extends Migration
             $table->string('address');
             $table->longText('about');
 
-            //Amenities
+            // Amenities
             $table->boolean('amenity_wifi')->default(false);
             $table->boolean('amenity_pets_allowed')->default(false);
             $table->boolean('amenity_tv')->default(false);
@@ -43,6 +44,6 @@ class CreateListingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('listings');
+        Schema::drop('listings');
     }
 }

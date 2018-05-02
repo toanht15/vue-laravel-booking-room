@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Storage as Storage;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'ListingController@get_home_web');
+Route::get('/listing/{listing}', 'ListingController@get_listing_web');
